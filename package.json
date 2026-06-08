@@ -1,0 +1,24 @@
+{
+  "name": "aeo-nextjs-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Next.js starter optimized to be cited by AI engines (ChatGPT, Perplexity, Claude, Google AI). AEO/GEO out of the box.",
+  "scripts": {
+    "predev": "node scripts/generate-llms-txt.mjs",
+    "prebuild": "node scripts/generate-llms-txt.mjs",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.12",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "typescript": "^5.7.3"
+  }
+}

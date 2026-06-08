@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+.DS_Store
+*.log
+.env*.local
+.vercel
+next-env.d.ts
+# generated at build time
+public/llms.txt
+public/llms-full.txt

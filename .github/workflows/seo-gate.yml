@@ -1,0 +1,21 @@
+# AEO quality gate — breaks the build if something critical fails.
+name: AEO Gate
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  aeo-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm ci
+      - name: Build (also generates llms.txt)
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://example.com
+      - name: Check llms.txt was generated
+        run: test -s public/llms.txt && echo "llms.txt OK" || (echo "missing llms.txt" && exit 1)
