@@ -4,8 +4,8 @@
   "private": true,
   "description": "Next.js starter optimized to be cited by AI engines (ChatGPT, Perplexity, Claude, Google AI). AEO/GEO out of the box.",
   "scripts": {
-    "predev": "node scripts/generate-llms-txt.mjs",
-    "prebuild": "node scripts/generate-llms-txt.mjs",
+    "predev": "node scripts/generate-llms-txt.mjs && node scripts/generate-md-pages.mjs",
+    "prebuild": "node scripts/generate-llms-txt.mjs && node scripts/generate-md-pages.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"

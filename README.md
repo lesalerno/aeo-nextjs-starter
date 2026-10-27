@@ -14,6 +14,7 @@ validated in production on real B2B catalogs.
 
 - ✅ **`robots.ts`** — allows the 11 AI crawlers explicitly (ChatGPT, Perplexity, Claude, Google-Extended…)
 - ✅ **`llms.txt` + `llms-full.txt`** — auto-generated from your data at build time
+- ✅ **Clean `.md` page per product** (`scripts/generate-md-pages.mjs`) — answer first, facts in a table, "Updated on" date. This is what AI engines actually consume (Oct 2026 update: most crawlers ignore llms.txt)
 - ✅ **Valid JSON-LD** — Organization (consolidated via `@id` + `knowsAbout`), ItemList for price-less catalogs, FAQPage
 - ✅ **`sitemap.ts`** with canonical-aligned URLs (no trailing-slash redirect trap)
 - ✅ **Metadata** with og:image that actually inherits per route
@@ -39,6 +40,7 @@ Then:
 | File | Why |
 |---|---|
 | `app/robots.ts` | AI engines won't cite you if their bots aren't allowed. |
+| `scripts/generate-md-pages.mjs` | Writes a clean `.md` version of every product page next to the HTML. Link them from llms.txt. |
 | `scripts/generate-llms-txt.mjs` | LLMs prefer dense, factual text. This generates it from your source. |
 | `src/lib/jsonld.ts` | Helps the LLM resolve your entity and trust you as a source. |
 | `next.config.ts` (`trailingSlash:false`) | A canonical/redirect mismatch silently removes you from the index. |

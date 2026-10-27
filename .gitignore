@@ -9,3 +9,6 @@ next-env.d.ts
 # generated at build time
 public/llms.txt
 public/llms-full.txt
+# generated .md pages (scripts/generate-md-pages.mjs)
+public/amplifiers/
+public/speakers/
